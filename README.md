@@ -1,0 +1,1 @@
+# ub-android-studio-templates
