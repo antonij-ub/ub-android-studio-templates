@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<template
+    format="1"
+    revision="1"
+    name="Fragment Module"
+    description="Creates an fragment with CI and MVP modules"
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="CI" />
+    
+    <parameter
+        id="moduleName"
+        name="Module Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default=""
+        help="The name of the module" />
+
+    <parameter
+        id="includeLayout"
+        name="Create layout XML?"
+        type="boolean"
+        default="true"
+        help="Generate a layout XML for the activity" />
+
+    <parameter
+        id="includeMVP"
+        name="Include MVP?"
+        type="boolean"
+        default="true"
+        help="Generate MVP files?" />
+
+    <parameter
+        id="includeCI"
+        name="Include CI dependences?"
+        type="boolean"
+        default="true"
+        help="Generate CI dependences files?" />
+
+    <parameter
+        id="openFragmentClass"
+        name="Open Activity after template created?"
+        type="boolean"
+        default="true"
+        help="Will open Activity file after template created" />
+
+    <parameter
+        id="openLayout"
+        name="Open layout activity file after template created?"
+        type="boolean"
+        default="true"
+        visibility="includeLayout"
+        help="Will open layout file after template created" />
+
+    <parameter
+        id="openMVP"
+        name="Open MVP files (Presenter, View) after creating?"
+        type="boolean"
+        default="false"
+        visibility="includeMVP"
+        help="Will open MVP files after template created" />
+
+    <parameter
+        id="openDI"
+        name="Open DI files (Module, Scope, Component) after creating?"
+        type="boolean"
+        default="true"
+        visibility="includeCI"
+        help="Will open DI files after template created" />
+
+    <parameter
+        id="openCI"
+        name="Open CI files (Interactor, Repositories) after template created?"
+        type="boolean"
+        default="false"
+        visibility="includeCI"
+        help="Will open layout file after template created" />
+
+    <thumbs>
+        <thumb>template_ci_mvp_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
